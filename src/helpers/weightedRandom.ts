@@ -3,7 +3,7 @@ export default function getWeightedRandom<T>(
     weights: number[],
 ): T {
     // Credit : https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets/weightedSample.md
-    let roll = Math.random()
+    const roll = Math.random()
     return arr[
         weights
             .reduce(
