@@ -1,4 +1,4 @@
-const rarity = {
+export const rarities = {
     'common': '#ffffff',
     'uncommon': '#1eff00',
     'rare': '#0070dd',
@@ -7,15 +7,15 @@ const rarity = {
     'mythic': '#fd0071',
 } as const
 
-export type Rarity = keyof typeof rarity
-export type RarityColor = typeof rarity[keyof typeof rarity]
+export type Rarity = keyof typeof rarities
+export type RarityColor = typeof rarities[keyof typeof rarities]
 
 
 export const defaultRarityWeights = {
-    rarity: Object.keys(rarity) as Rarity[],
+    rarity: Object.keys(rarities) as Rarity[],
     weight: [.3, .3, .2, .1, .07, .03],
 }
 
 export function getColor(name: Rarity): RarityColor {
-    return rarity[name]
+    return rarities[name]
 }
