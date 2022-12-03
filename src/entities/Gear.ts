@@ -6,6 +6,7 @@ export interface Gear {
     uuid: Uuid<'Gear'>
     rarity: Rarity,
     type: Type,
+    effects: Effect[]
 }
 
 const types = [
@@ -24,6 +25,17 @@ export function createGear(options: PartialWithRequired<Gear, 'type'>): Gear {
             defaultRarityWeights.rarity,
             defaultRarityWeights.weight,
         ),
+        effects: [],
         ...options,
     }
+}
+
+const effects = {
+    'GEAR_TEST_EFFECT': () => console.log('GEAR TEST EFFECT'),
+} as const
+
+export type Effect = keyof typeof effects
+
+export function useGearEffet(effect: Effect) {
+    return effects[effect]()
 }

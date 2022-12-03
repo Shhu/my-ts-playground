@@ -8,22 +8,20 @@ export interface Item {
 }
 
 const effects = {
-    'console_log_1': () => console.log('EFFECT 1'),
-    'console_log_2': () => console.log('EFFECT 2'),
-    'console_log_3': () => console.log('EFFECT 3'),
+    'ITEM_TEST_EFFECT': () => console.log('ITEM TEST EFFECT'),
 } as const
 
 export type Effect = keyof typeof effects
-
-export function useGearEffet(effect: Effect) {
-    return effects[effect]()
-}
 
 export function getItem(): Item {
     return {
         uuid: uuid(),
         name: 'Yolo',
         description: 'description',
-        effects: ['console_log_1', 'console_log_3'],
+        effects: ['ITEM_TEST_EFFECT'],
     }
+}
+
+export function useItemEffet(effect: Effect) {
+    return effects[effect]()
 }
