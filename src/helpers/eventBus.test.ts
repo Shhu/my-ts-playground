@@ -3,7 +3,7 @@ import EventBus from '@/helpers/eventBus'
 
 describe('test the event bus', () => {
     it('must trigger a callback when event is fired', async () => {
-        let testFired: boolean = false
+        let testFired = false
 
         EventBus().subscribe('battle.victory', () => testFired = true)
         await EventBus().fire('battle.victory')
