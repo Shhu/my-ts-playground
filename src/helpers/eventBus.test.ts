@@ -12,7 +12,7 @@ describe('test the event bus', () => {
     })
 
     it(`callback should't be triggered when event is unsubscribed`, async () => {
-        let testNotFired: boolean = false
+        let testNotFired = false
 
         const event = EventBus().subscribe('battle.victory', () => testNotFired = true)
         EventBus().unsubscribe('battle.victory', event)
