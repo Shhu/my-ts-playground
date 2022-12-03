@@ -1,7 +1,5 @@
-import { uuid, Uuid } from '@/helpers/uuid'
-
 export interface Item {
-    uuid: Uuid<'Inventory'>
+    identifier: string,
     name: string
     description: string
     effects: Effect[]
@@ -13,13 +11,23 @@ const effects = {
 
 export type Effect = keyof typeof effects
 
-export function getItem(): Item {
-    return {
-        uuid: uuid(),
-        name: 'Yolo',
-        description: 'description',
+const items: Item[] = [
+    {
+        identifier: 'test_item',
+        name: 'ITEM TEST NAME',
+        description: 'ITEM TEST DESCRIPTION',
         effects: ['ITEM_TEST_EFFECT'],
-    }
+    },
+    {
+        identifier: 'xp_potion_100_60',
+        name: 'ITEM TEST NAME',
+        description: 'ITEM TEST DESCRIPTION',
+        effects: ['ITEM_TEST_EFFECT'],
+    },
+]
+
+export function getItem(): Item {
+    return items.find(item => item.name === 'ITEM TEST NAME')!
 }
 
 export function useItemEffet(effect: Effect) {
