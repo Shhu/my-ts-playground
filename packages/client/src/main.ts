@@ -1,2 +1,6 @@
-export default {} // todo isolated module bla bla bla
-console.log('CLIENT MAIN LOADED')
+import { createApp } from 'vue'
+import App from './App.vue'
+import './style.css'
+
+createApp(App).mount('#app')
+
