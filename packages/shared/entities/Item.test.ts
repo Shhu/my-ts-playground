@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useItemEffet } from '@/entities/Item'
+import { useItemEffet } from './Item'
 
 describe('test item', () => {
     it('should trigger item effect', () => {

@@ -1,5 +1,5 @@
 import { Unit } from './Unit'
-import { uuid, Uuid } from '@/helpers/uuid'
+import { uuid, Uuid } from '../helpers/uuid'
 import { Inventory } from './Inventory'
 
 export interface Player {

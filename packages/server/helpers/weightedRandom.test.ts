@@ -1,6 +1,6 @@
-import getWeightedRandom from '@/helpers/weightedRandom'
+import getWeightedRandom from './weightedRandom'
 import { describe, expect, it } from 'vitest'
-import { Rarity } from '@/entities/Rarity'
+import { Rarity } from '../../shared/entities/Rarity'
 
 describe('test weighted random', () => {
     it('should correctly do random selection based on weights in straightforward cases', () => {

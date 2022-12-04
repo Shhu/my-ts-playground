@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import EventBus from '@/helpers/eventBus'
+import EventBus from '../../../client/src/helpers/eventBus'
 
 describe('test the event bus', () => {
     it('must trigger a callback when event is fired', async () => {

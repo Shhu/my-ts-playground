@@ -1,5 +1,5 @@
 import { Gear } from './Gear'
-import { Uuid } from '@/helpers/uuid'
+import { Uuid } from '../helpers/uuid'
 
 export interface Unit {
     uuid: Uuid<'Unit'>

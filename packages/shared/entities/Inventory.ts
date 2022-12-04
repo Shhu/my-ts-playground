@@ -1,4 +1,4 @@
-import { Uuid } from '@/helpers/uuid'
+import { Uuid } from '../helpers/uuid'
 
 export interface Inventory {
     uuid: Uuid<'Inventory'>

@@ -1,6 +1,7 @@
 import { defaultRarityWeights, Rarity } from './Rarity'
-import { uuid, Uuid } from '@/helpers/uuid'
-import getWeightedRandom from '@/helpers/weightedRandom'
+import { uuid, Uuid } from '../helpers/uuid'
+import getWeightedRandom from '../../server/helpers/weightedRandom'
+import { PartialWithRequired } from '../types/AdvancedPartial'
 
 export interface Gear {
     uuid: Uuid<'Gear'>
@@ -19,6 +20,9 @@ const types = [
 type Type = typeof types[keyof typeof types]
 
 export function createGear(options: PartialWithRequired<Gear, 'type'>): Gear {
+    if (!options.type || !types.includes(options.type as keyof Type))
+        throw 'CreateGear options must have a valid type'
+
     return {
         uuid: options.uuid ?? uuid(),
         rarity: options.rarity ?? getWeightedRandom<Rarity>(
