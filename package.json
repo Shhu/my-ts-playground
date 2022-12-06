@@ -5,12 +5,20 @@
     "workspaces": [
         "packages/*"
     ],
+    "prisma": {
+        "schema": "packages/shared/prisma/schema.prisma"
+    },
     "scripts": {
         "client:dev": "vite ./packages/client",
         "server:dev": "ts-node ./packages/server/server.ts",
-        "build": "tsc && vite build ",
-        "preview": "vite preview",
-        "test": "vitest --watch",
+        "shared:prisma": "dotenv -e ./packages/shared/.env prisma",
+        "shared:prisma-generate": "pnpm run shared:prisma generate",
+        "shared:prisma-studio": "pnpm run shared:prisma studio",
+        "shared:prisma-migrate": "pnpm run shared:prisma migrate dev",
+        "shared:prisma-push": "pnpm run shared:prisma db push",
         "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json"
+    },
+    "dependencies": {
+        "dotenv-cli": "^6.0.0"
     }
 }

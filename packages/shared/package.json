@@ -3,9 +3,13 @@
     "private": true,
     "version": "0.0.0",
     "scripts": {},
-    "devDependencies": {},
+    "devDependencies": {
+        "prisma": "^4.7.1"
+    },
     "dependencies": {
+        "@prisma/client": "^4.7.1",
         "@types/uuid": "^8.3.4",
+        "dotenv": "^16.0.3",
         "uuid": "^9.0.0"
     }
 }
