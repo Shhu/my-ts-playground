@@ -1,5 +1,5 @@
 {
-    "name": "poc",
+    "name": "my-ts-playground",
     "private": true,
     "version": "0.0.1",
     "workspaces": [
@@ -7,11 +7,10 @@
     ],
     "scripts": {
         "client:dev": "vite ./packages/client",
+        "server:dev": "ts-node ./packages/server/server.ts",
         "build": "tsc && vite build ",
         "preview": "vite preview",
         "test": "vitest --watch",
         "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json"
-    },
-    "devDependencies": {},
-    "dependencies": {}
+    }
 }

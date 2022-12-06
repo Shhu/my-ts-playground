@@ -1,0 +1,11 @@
+{
+    "name": "my-ts-playground-shared",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {},
+    "devDependencies": {},
+    "dependencies": {
+        "@types/uuid": "^8.3.4",
+        "uuid": "^9.0.0"
+    }
+}

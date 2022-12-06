@@ -12,6 +12,9 @@ export default defineConfig({
             '@app-server': resolve(__dirname, '../server'),
         },
     },
+    server: {
+        port: 3011,
+    },
     preview: {
         host: 'localhost',
         port: 5000,
