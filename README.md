@@ -1,9 +1,13 @@
 ## Playground
 
 ### Client stack
-- Vue3 (Typescript)
+- Vue3
+- typescript
 - Tailwind
 
 ### Server stack
-- Prisma + typescript + zod 
+- Fastify
+- Prisma
+- typescript
+- zod 
 - tRPC
