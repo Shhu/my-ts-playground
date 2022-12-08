@@ -1,13 +1,15 @@
 -- CreateTable
-CREATE TABLE "Player" (
-    "id" SERIAL NOT NULL,
-    "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+CREATE TABLE "Player"
+(
+    "id"         uuid         NOT NULL,
+    "email"      VARCHAR      NOT NULL,
+    "name"       VARCHAR      NOT NULL,
+    "password"   VARCHAR      NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Player_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Player_email_key" ON "Player"("email");
+CREATE UNIQUE INDEX "Player_email_key" ON "Player" ("email");

@@ -6,15 +6,17 @@
         "packages/*"
     ],
     "prisma": {
-        "schema": "packages/shared/prisma/schema.prisma"
+        "schema": "packages/shared/prisma/schema.prisma",
+        "seed": "ts-node packages/shared/prisma/seed.ts"
     },
     "scripts": {
         "client:dev": "vite ./packages/client",
-        "server:dev": "ts-node ./packages/server/server.ts",
+        "server:dev": "npx nodemon ./packages/server/server.ts",
         "shared:prisma": "dotenv -e ./packages/shared/.env prisma",
         "shared:prisma-generate": "pnpm run shared:prisma generate",
         "shared:prisma-studio": "pnpm run shared:prisma studio",
         "shared:prisma-migrate": "pnpm run shared:prisma migrate dev",
+        "shared:prisma-reset": "pnpm run shared:prisma migrate reset",
         "shared:prisma-push": "pnpm run shared:prisma db push",
         "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json"
     },
