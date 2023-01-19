@@ -1,14 +1,15 @@
 <script>
-import trcp from '../composables/useTrcp'
+import { trpc } from '$lib/trpc/client'
 
 async function fetch() {
-    return await trcp.getUserById.query({
+    return await trpc().getUserById.query({
         id: '0160418c-83cd-411d-8bb9-068a123bab3b',
     })
 }
 
 let player = fetch()
 </script>
+
 <div class='flex flex-col items-center justify-center h-screen'>
     <h1 class='text-3xl font-bold underline text-blue-500'>
         Hello

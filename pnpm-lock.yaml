@@ -54,10 +54,13 @@ importers:
       svelte: ^3.54.0
       svelte-check: ^3.0.1
       tailwindcss: ^3.2.4
+      trpc-sveltekit: ^3.2.4
       tslib: ^2.4.1
       typescript: ^4.9.3
       vite: ^4.0.0
       vitest: ^0.25.3
+    dependencies:
+      trpc-sveltekit: 3.2.4
     devDependencies:
       '@playwright/test': 1.29.2
       '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.1.4
@@ -3055,6 +3058,13 @@ packages:
     dependencies:
       nopt: 1.0.10
     dev: true
+
+  /trpc-sveltekit/3.2.4:
+    resolution: {integrity: sha512-m7nU+pEfJNna/++yc6kuwe2GUbgRAuxl8PY8jTV9zKKbWhgOfpvjhRP0QgbbhnBXN9rKkQhTJZBDrBwZSszjqQ==}
+    dependencies:
+      '@trpc/client': 10.9.0_@trpc+server@10.9.0
+      '@trpc/server': 10.9.0
+    dev: false
 
   /ts-node/10.9.1_wup25etrarvlqkprac7h35hj7u:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
