@@ -27,7 +27,7 @@ let player = fetch()
         <p>...waiting</p>
     {:then { player }}
         {#if player}
-            <div in:fly='{({ y: 200, duration: 200 })}' class='w-full max-w-xl mx-auto bg-gray-100 rounded-lg my-8 p-4'>
+            <div in:fly='{({ y: 200, duration: 200 })}' class='w-full max-w-xl mx-auto bg-gray-50 rounded-lg my-8 p-4'>
                 <pre class='text-sm'>{JSON.stringify(player)}</pre>
             </div>
         {/if}
