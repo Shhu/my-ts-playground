@@ -5,7 +5,6 @@ import { fly } from 'svelte/transition'
 let loading = false
 
 async function fetch() {
-    console.log('fetch')
     loading = true
     const res = await trpc().getUserById.query({
         id: '0160418c-83cd-411d-8bb9-068a123bab3b',
