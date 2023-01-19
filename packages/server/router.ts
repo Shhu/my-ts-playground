@@ -8,21 +8,19 @@ const defaultUserSelect = Prisma.validator<Prisma.PlayerSelect>()({
     name: true,
 })
 
-export const tRPC = initTRPC.create()
-export const appRouter = tRPC.router({
-    getUserById: tRPC.procedure
-        .input(
-            z.string(),
-        )
+const t = initTRPC.create()
+export const appRouter = t.router({
+    getUserById: t.procedure
+        .input(z.object({
+            id: z.string(),
+        }))
         .query(async ({ input }) => {
             const player = await prisma.player.findUnique({
-                where: { id: input },
+                where: { id: input.id },
                 select: defaultUserSelect,
             })
 
-            return {
-                msg: `Hello ${ player?.name }`,
-            }
+            return { player }
         }),
 })
 // export type definition of API

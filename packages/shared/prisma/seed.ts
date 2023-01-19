@@ -17,6 +17,7 @@ async function main() {
         where: { email: 'player.two@example.com' },
         update: {},
         create: {
+            id: '0160418c-83cd-411d-8bb9-068a123bab3b',
             email: 'player.two@example.com',
             name: 'PlayerTwo',
             password: hashString('secret'),

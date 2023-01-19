@@ -16,5 +16,7 @@
         "postcss": "^8.4.19",
         "autoprefixer": "^10.4.13"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@trpc/client": "^10.9.0"
+    }
 }
